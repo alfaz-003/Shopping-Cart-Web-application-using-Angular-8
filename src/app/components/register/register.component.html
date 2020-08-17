@@ -1,0 +1,75 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 login-section-wrapper">
+        <div class="brand-wrapper">
+        </div>
+        <div class="login-wrapper my-auto">
+          <h1 class="login-title">Sign up</h1>
+          <form name="form"  (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+            <div class="form-group">
+                <label for="email">Full Name</label>
+                <input type="text" name="n" id="n" class="form-control" 
+                [(ngModel)]="model.fullname" #fullname="ngModel" 
+                [ngClass]="{ 'is-invalid': f.submitted && fullname.invalid }" required fullname/>
+              
+                <div *ngIf="f.submitted && fullname.invalid" class="invalid-feedback">
+                <div *ngIf="fullname.errors.required">fullname is required</div>
+              </div>
+            </div>
+              
+
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                  <div *ngIf="email.errors.email">Email must be a valid email address</div>
+              </div>
+        </div>
+      
+
+
+
+
+
+
+            <div class="form-group mb-4">
+              <label for="password"> Set Password</label>
+              <input type="password" name="password" id="password" class="form-control" [(ngModel)]="model.password" #password="ngModel"
+              [ngClass]="{'is-invalid':f.submitted && password.invalid }" required password  minlength="6" />
+              <div *ngIf = "f.submitted && password.invalid" class="invalid-feedback">
+                <div *ngIf="password.errors.required">password is required</div>
+                  <div *ngIf = "password.errors.minlength">Password must be of 8 characters</div>
+            </div>
+          </div>
+
+
+
+            <div class="form-group">
+                <label for="contact">Contact No </label>
+                <input  name="contact" id="nu" class="form-control" placeholder=""
+                [(ngModel)]="model.contact " #contact="ngModel"
+                [ngClass] = "{ 'is-invalid' : f.submitted && contact.invalid}" required contact maxlength="10" />
+                <div *ngIf = "f.submitted && contact.invalid" class="invalid-feedback">
+                  <div *ngIf = "contact.errors.required">Contact num is required</div>
+                  <div *ngIf = "contact.errors.maxlength">should contain only 10 characters</div>
+
+                </div>
+              </div>
+
+
+           <button type="submit" class="btn btn-warning" >create Account</button>
+          </form>
+          <br>
+          <br>
+        
+        </div>
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="assets/register.png" alt="login image" class="login-img">
+      </div>
+    </div>
+  </div>

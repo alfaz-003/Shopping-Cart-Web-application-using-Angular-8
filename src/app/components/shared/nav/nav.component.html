@@ -1,0 +1,45 @@
+<div class=" d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-black border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+
+        <a href="#" class="navbar-brand">
+            <img src="assets/L3.png" height="35">
+        </a>
+        <app-header></app-header>
+     </h5>   
+    <nav class="my-2 my-md-0 mr-md-3">
+     
+      <a class="p-2 text-dark" >Latest</a>
+      <a class="p-2 text-dark" >Brands</a>
+      <a class="p-2 text-dark" [routerLink]="['/shop']" 
+        routerLinkActive="router-link-active" >Shop</a>
+    
+
+
+     
+      <a class=" p-2 text-dark dropdown-toggle-split waves-light" data-toggle="dropdown" data-hover="dropdown"  mdbWavesEffect>
+        <img src="assets/p.png" alt="user"  style="height: auto; width: 30px">
+      </a>
+      <span class="sr-only">Toggle Dropdown</span>
+
+
+      
+      <div class="dropdown-menu dropdown-primary">
+        <a class="dropdown-item" href="#">Account</a>
+        <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="router-link-active" >Logout</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+      
+
+      
+
+
+      
+
+      
+
+
+     
+    </nav>
+    <a class="btn btn-outline-primary" routerLink='/login' style="height: auto; width: auto;">Sign up</a>
+  </div>
+  
